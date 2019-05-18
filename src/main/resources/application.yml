@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: eurka-feign   #服务消费者
+  mvc:
+      static-path-pattern: /static/**
+      view:
+        prefix: /user
+        suffix: .jsp
+server:
+  port: 7003 #服务消费者端口
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true   #是否注册给服务中心
+    fetchRegistry: true     #是否检索服务
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8080/eureka/
+
+
+
+
